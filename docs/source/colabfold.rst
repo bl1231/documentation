@@ -12,17 +12,17 @@ Basic command line instructions
 .. Note::
    These instructions assume you have a remote shell open on epyc, which is outfitted with 2 NVIDIA A100-80 GPUs.
 
-Activate `colabfold` conda environment.
-***************************************
+Activate ``colabfold`` conda environment.
+*****************************************
 
-``colabfold_batch`` is the command line tool you will be using. It is installed into a preconfigured conda Python environment named ``colabfold``. If your default shell is configured properly you should be able to activate the `colabfold` conda environment thusly:
+``colabfold_batch`` is the command line tool you will be using. It is installed into a preconfigured conda Python environment named ``colabfold``. If your default shell is configured properly you should be able to activate the ``colabfold`` conda environment thusly:
 
 .. code-block:: bash
 
    conda activate colabfold
 
 
-If you get a warning that `conda` can't be found it likely means your shell is not yet configured to use conda. You can try this:
+If you get a warning that ``conda`` can't be found it likely means your shell is not yet configured to use conda. You can try this:
 
 .. code-block:: bash
 
@@ -38,7 +38,7 @@ You can see the available conda environments:
    conda env list
 
 
-and then activate the `colabfold` environment.
+and then activate the ``colabfold`` environment.
 
 .. code-block:: bash
 
@@ -54,40 +54,43 @@ If this worked your shell prompt should look something like this with the name o
 
 .. Attention::
 
-   If you are still running into problems please contact Scott
+   If you are struggling to get the ``colabfold`` conda environment activated or run into other problems please contact Scott
 
 Create a working directory
-*********************************************
+**************************
 
-You will want to enforce some organization for your `colabfold` data so make a directory.
+You will want to enforce some organization for your ``colabfold`` data so make a directory.
 
-```bash
-mkdir colabfold_data
-```
+.. code-block:: bash
+
+   mkdir colabfold_data
+
 
 and make a dedicated directory for your protein/system of interest.
 
-```bash
-cd colabfold_data
-mkdir my_prot
-```
+.. code-block:: bash
+
+   cd colabfold_data
+   mkdir my_prot
+
 
 Create your fasta sequence file
-*********************************************
+*******************************
 
-This is quite simple if you have a single chain. For example create a file named `my_prot.fasta` (you can of course name it whatever you want)
+This is quite simple if you have a single chain. For example create a file named ``my_prot.fasta`` (you can of course name it whatever you want)
 
-```
+.. code-block::
+
 >1RDR_1|Chain A|POLIOVIRUS 3D POLYMERASE|Human poliovirus 1 (12081)
 GEIQWMRPSKEVGYPIINAPSKTKLEPSAFHYVFEGVKEPAVLTKNDPRLKTDFEEAIFSKYVGNKITEVDEYMKEAVDHYAGQLMSLDINTEQMCLEDAMYGTDGLEALDLSTSAGYPYVAMGKKKRDILNKQTRDTKEMQKLLDTYGINLPLVTYVKDELRSKTKVEQGKSRLIEASSLNDSVAMRMAFGNLYAAFHKNPGVITGSAVGCDPDLFWSKIPVLMEEKLFAFDYTGYDASLSPAWFEALKMVLEKIGFGDRVDYIDYLNHSHHLYKNKTYCVKGGMPSGCSGTSIFNSMINNLIIRTLLLKTYKGIDLDHLKMIAYGDDVIASYPHEVDASLLAQSGKDYGLTMTPADKSATFETVTWENVTFLKRFFRADEKYPFLIHPVMPMKEIHESIRWTKDPRNTQDHVRSLCLLAWHNGEEEYNKFLAKIRSVPIGRALLLPEYSTLYRRWLDSF
-```
 
-To fold a single chain this is all you really need in your `my_prot` directory.
+
+To fold a single chain this is all you really need in your ``my_prot`` directory.
 
 Run ColabFold on a Monomer
 *********************************************
 
-There are many options available when running `colabfold_batch` whcih you can see
+There are many options available when running ``colabfold_batch`` whcih you can see
 
 ```bash
 colabfold_batch --help
