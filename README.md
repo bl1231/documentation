@@ -1,5 +1,4 @@
-SIBYLS Beamline Documentation
-=======================================
+# SIBYLS Beamline Documentation
 
 ![Read the Docs](https://img.shields.io/readthedocs/sibyls-beamline-documentation)
 
