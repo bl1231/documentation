@@ -9,31 +9,31 @@ These are basic instructions for connecting to epyc and running a ColabFold job 
 Basic command line instructions
 ===============================
 
-> **Note**
-> all these instructions assume you have a remote shell open on epyc, which is outfitted with 2 NVIDIA A100-80 GPUs.
+.. Note::
+   These instructions assume you have a remote shell open on epyc, which is outfitted with 2 NVIDIA A100-80 GPUs.
 
 Activate `colabfold` conda environment.
-*********************************************
+***************************************
 
-`colabfold_batch` is the command line tool you will be using. It is installed into a preconfigured conda Python environment named `colabfold`. If your default shell is configured properly you should be able to activate the `colabfold` conda environment thusly:
+``colabfold_batch`` is the command line tool you will be using. It is installed into a preconfigured conda Python environment named ``colabfold``. If your default shell is configured properly you should be able to activate the `colabfold` conda environment thusly:
 
-```bash
-conda activate colabfold
-```
+.. code-block:: bash
+   conda activate colabfold
+
 
 If you get a warning that `conda` can't be found it likely means your shell is not yet configured to use conda. You can try this:
 
-```bash
-/usr/local/anaconda3/bin/conda init
-```
+.. code-block:: bash
+   /usr/local/anaconda3/bin/conda init
+
 
 Then logout and login.
 
 You can see the available conda environments:
 
-```bash
-conda env list
-```
+.. code-block:: bash
+   conda env list
+
 
 and then activate the `colabfold` environment.
 
