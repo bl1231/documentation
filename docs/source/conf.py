@@ -2,9 +2,9 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'SIBYLS Beamline Documentation'
+copyright = '2023, SIBYLS'
+author = 'Scott Classen'
 
 release = '0.1'
 version = '0.1.0'
