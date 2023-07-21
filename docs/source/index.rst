@@ -10,7 +10,7 @@ Welcome to SIBYLS docs's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-
+ColabFold Instructions <colabfold>
 
 Indices and tables
 ==================
