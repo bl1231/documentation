@@ -7,8 +7,8 @@ Welcome to SIBYLS Beamline documentation!
    :titlesonly:
    :caption: Contents
 
-   colabfold
-   test
+   Instructions for running ColabFold <colabfold>
+   Connecting with NoMachine NX Client <nomachine>
 
 Indices and tables
 ==================

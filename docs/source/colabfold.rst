@@ -1,5 +1,5 @@
 ======================
-colabfold-instructions
+Running ColabFold
 ======================
 
 Some instructions for running `ColabFold`_ on epyc.
