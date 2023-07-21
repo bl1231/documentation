@@ -89,76 +89,84 @@ To fold a single chain this is all you really need in your ``my_prot`` directory
 Run ColabFold on a Monomer
 *********************************************
 
-There are many options available when running ``colabfold_batch`` whcih you can see
+There are many options available when running ``colabfold_batch`` which you can see with the ``--help`` flag.
 
-```bash
-colabfold_batch --help
-```
+.. code-block:: bash
 
-If you just want to use all of teh default settings it's as simple as:
+   colabfold_batch --help
 
-```bash
-colabfold_batch my_prot.fasta output_dir
-```
+If you just want to use the default settings it's as simple as:
 
-which will read your fasta sequence, calculate an MSA using **MMseqs2**, perform **AlfaFold2** inference, and output all results to the `output_dir` directory.
+.. code-block:: bash
 
-If you want to use amber to relax the model provided by AF2 and use the A100 GPUs to make relaxation even faster you would do this:
+   colabfold_batch my_prot.fasta output_dir
 
-```bash
-colabfold_batch --amber --use-gpu-relax --model-type auto my_prot.fasta output_dir
-```
+This will read your fasta sequence, calculate an MSA using **MMseqs2**, perform **AlfaFold2** inference, and output all results to the ``output_dir`` directory.
+
+If you want to use **amber** to relax the model provided by AF2 and use the A100 GPUs to make relaxation even faster you would do this:
+
+.. code-block:: bash
+
+   colabfold_batch --amber --use-gpu-relax --model-type auto my_prot.fasta output_dir
+
 
 Run ColabFold on a Multimer
-*********************************************
+***************************
 
-There are different AF2 models available, including alphafold2_multimer_v1, alphafold2_multimer_v2, alphafold2_multimer_v3. The default is auto (which uses alphafold2_ptm for monomers and alphafold2_multimer_v3 for complexes.)
+There are different **AlphaFold2** models available, including ``alphafold2_multimer_v1``, ``alphafold2_multimer_v2``, ``alphafold2_multimer_v3``. The default is ``auto`` (which uses ``alphafold2_ptm`` for monomers and ``alphafold2_multimer_v3`` for complexes.)
 
-If you are predicting a multimer there are some gotchas when preparing the fasta file. Talk to me if you run into errors. Essentially you need to create your fasta file like this (with a `:` after each chain, but **not** after the last chain)
+If you are predicting a multimer there are some gotchas when preparing the fasta file. Talk to me if you run into errors. Essentially you need to create your fasta file like this (with a ``:`` after each chain, but **not** after the last chain)
 
-An example of a `multimer.fasta` file
 
-```
-> 1BJP_homohexamer
-> PIAQIHILEGRSDEQKETLIREVSEAISRSLDAPLTSVRVIITEMAKGHFGIGGELASKVRR:
-> PIAQIHILEGRSDEQKETLIREVSEAISRSLDAPLTSVRVIITEMAKGHFGIGGELASKVRR:
-> PIAQIHILEGRSDEQKETLIREVSEAISRSLDAPLTSVRVIITEMAKGHFGIGGELASKVRR:
-> PIAQIHILEGRSDEQKETLIREVSEAISRSLDAPLTSVRVIITEMAKGHFGIGGELASKVRR:
-> PIAQIHILEGRSDEQKETLIREVSEAISRSLDAPLTSVRVIITEMAKGHFGIGGELASKVRR:
-> PIAQIHILEGRSDEQKETLIREVSEAISRSLDAPLTSVRVIITEMAKGHFGIGGELASKVRR
-```
 
-And then fire off your colabfold:
+.. code-block::
+   :caption: An example of a ``multimer.fasta`` file
 
-```bash
-colabfold_batch --amber --use-gpu-relax --model-type alphafold2_multimer_v3 multimer.fasta output_dir_for_multimer
-```
+   > 1BJP_homohexamer
+   > PIAQIHILEGRSDEQKETLIREVSEAISRSLDAPLTSVRVIITEMAKGHFGIGGELASKVRR:
+   > PIAQIHILEGRSDEQKETLIREVSEAISRSLDAPLTSVRVIITEMAKGHFGIGGELASKVRR:
+   > PIAQIHILEGRSDEQKETLIREVSEAISRSLDAPLTSVRVIITEMAKGHFGIGGELASKVRR:
+   > PIAQIHILEGRSDEQKETLIREVSEAISRSLDAPLTSVRVIITEMAKGHFGIGGELASKVRR:
+   > PIAQIHILEGRSDEQKETLIREVSEAISRSLDAPLTSVRVIITEMAKGHFGIGGELASKVRR:
+   > PIAQIHILEGRSDEQKETLIREVSEAISRSLDAPLTSVRVIITEMAKGHFGIGGELASKVRR
+
+
+And then fire off your ``colabfold_bactch`` job:
+
+.. code-block:: bash
+
+   colabfold_batch --amber --use-gpu-relax --model-type alphafold2_multimer_v3 multimer.fasta output_dir_for_multimer
+
 
 Monitoring the GPU status
-*********************************************
+*************************
 
-You can use `gpustat`` to see the status of our two A100s which should output something like this:
+You can use ``gpustat`` to see the status of our two A100s which should output something like this:
 
-```
-(colabfold) [17:14]username@epyc:~$gpustat
-epyc Thu Jul 20 17:26:13 2023  535.54.03
-[0] NVIDIA A100 80GB PCIe | 35'C,   0 % |  1007 / 81920 MB | gdm(63M) gdm(47M)
-[1] NVIDIA A100 80GB PCIe | 35'C,   0 % |   874 / 81920 MB |
-```
+.. code-block:: bash
 
-The default GPU that `colabfold_batch` will use is `0`, but if multiple jobs pile up on the first GPU and the second one (`1`) is unused then that is not very good. You can specify which GPU you would like to use by setting the `CUDA_VISIBLE_DEVICES` environment variable in your shell just before submitting the job.
+   (colabfold) [17:14]username@epyc:~$gpustat
+   epyc Thu Jul 20 17:26:13 2023  535.54.03
+   [0] NVIDIA A100 80GB PCIe | 35'C,   0 % |  1007 / 81920 MB | gdm(63M) gdm(47M)
+   [1] NVIDIA A100 80GB PCIe | 35'C,   0 % |   874 / 81920 MB |
 
-```bash
-export CUDA_VISIBLE_DEVICES=1
-```
+
+The default GPU that ``colabfold_batch`` will use is ``0``, but if multiple jobs pile up on the first GPU and the second one (``1``) is unused then that is not very good. You can specify which GPU you would like to use by setting the ``CUDA_VISIBLE_DEVICES`` environment variable in your shell just before submitting the job.
+
+.. code-block:: bash
+
+   export CUDA_VISIBLE_DEVICES=1
+
 
 This would make the second GPU the target for jobs.
 
-> **Note**
-> 0 = first GPU
-> 1 = second GPU
+.. Note::
+   ``0`` = first GPU
+   ``1`` = second GPU
 
 Using Microsoft Visual Studio Code
 #####################################
 
 The benefit of using VSCode is that you have a nice environment for editing files (rather than using `vim` in a terminal).
+
+I'll write these instructions up later.
