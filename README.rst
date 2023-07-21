@@ -1,9 +1,6 @@
-Template for the Read the Docs tutorial
+SIBYLS Beamline Documentation
 =======================================
 
-This GitHub template includes fictional Python library
-with some basic Sphinx docs.
+Beacuse you can never have enough documentation.
 
-Read the tutorial here:
-
-https://docs.readthedocs.io/en/stable/tutorial/
+https://sibyls-beamline-documentation.readthedocs.io/en/latest/
