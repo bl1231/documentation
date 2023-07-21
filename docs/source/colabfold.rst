@@ -18,12 +18,14 @@ Activate `colabfold` conda environment.
 ``colabfold_batch`` is the command line tool you will be using. It is installed into a preconfigured conda Python environment named ``colabfold``. If your default shell is configured properly you should be able to activate the `colabfold` conda environment thusly:
 
 .. code-block:: bash
+
    conda activate colabfold
 
 
 If you get a warning that `conda` can't be found it likely means your shell is not yet configured to use conda. You can try this:
 
 .. code-block:: bash
+
    /usr/local/anaconda3/bin/conda init
 
 
@@ -32,23 +34,27 @@ Then logout and login.
 You can see the available conda environments:
 
 .. code-block:: bash
+
    conda env list
 
 
 and then activate the `colabfold` environment.
 
-```bash
-conda activate colabfold
-```
+.. code-block:: bash
+
+   conda activate colabfold
+
 
 If this worked your shell prompt should look something like this with the name of the active conda environment in parenthses at the beginning of your prompt:
 
-```shell
-(colabfold) [16:58]username@epyc:~$
-```
+.. code-block:: bash
 
-> **Warning**
-> If you are still running into problems please contact Scott
+   (colabfold) [16:58]username@epyc:~$
+
+
+.. Attention::
+
+   If you are still running into problems please contact Scott
 
 Create a working directory
 *********************************************
