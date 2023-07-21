@@ -7,8 +7,8 @@ Welcome to SIBYLS Beamline documentation!
    :titlesonly:
    :caption: Contents
 
-colabfold.rst
-test.rst
+   colabfold
+   test
 
 Indices and tables
 ==================
