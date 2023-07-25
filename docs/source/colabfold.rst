@@ -22,23 +22,23 @@ Activate ``colabfold`` conda environment.
    conda activate colabfold
 
 
-For most users with teh default ``bash`` shell the above command should just work. If you are using ``tcsh`` or if you have twiddled with your shell configuration files in teh past you may get a warning that ``conda`` can't be found it likely means your shell is not yet configured to use conda. You can try initializing ``conda`` like this:
+For most users with the default ``bash`` shell the above command should just work. If you are using ``tcsh`` or if you have twiddled with your shell configuration files in the past you may get a warning that ``conda`` can't be found. This means your shell is not yet configured to use conda. You can try initializing ``conda`` with this command:
 
 .. code-block:: bash
 
    /usr/local/anaconda3/bin/conda init
 
 
-Then logout and login.
+Then logout and log back in to ensure the changes are applied to your shell.
 
-You can see the available conda environments:
+You can view the available conda environments:
 
 .. code-block:: bash
 
    conda env list
 
 
-and then activate the ``colabfold`` environment.
+and activate the ``colabfold`` environment.
 
 .. code-block:: bash
 
