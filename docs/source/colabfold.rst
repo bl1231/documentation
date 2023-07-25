@@ -2,9 +2,9 @@
 Running ColabFold
 ======================
 
-Some instructions for running `ColabFold`_ on epyc. I presented some of these instructions and a general overview of AlphaFold2 and ColabFold during an SBDR seminar (`SBDR_7_25_2023_Presentation`_).
+Some instructions for running `ColabFold`_ on epyc. I presented some of these instructions and a general overview of AlphaFold2 and ColabFold during an SBDR seminar (`slides`_).
 
-These are basic instructions for connecting to epyc and running a ColabFold job from the command line. It is also possible to use Microsoft's VSCode to connect if you are wanting a better experience.
+These are basic instructions for connecting to epyc and running a ColabFold job from the command line. It is also possible to use Microsoft's `VSCode`_ to connect if you are wanting a better experience.
 
 Basic command line instructions
 ===============================
@@ -166,4 +166,5 @@ The benefit of using VSCode is that you have a nice environment for editing file
 I'll write these instructions up later.
 
 .. _ColabFold: https://github.com/sokrypton/ColabFold
-.. _SBDR_7_25_2023_Presentation: https://docs.google.com/presentation/d/1UTAKlQKiFwy4Vz4GmS0MuoNuwBKDRfmkfTO2Meo1XdM/edit?usp=sharing
+.. _slides: https://docs.google.com/presentation/d/1UTAKlQKiFwy4Vz4GmS0MuoNuwBKDRfmkfTO2Meo1XdM/edit?usp=sharing
+.. _VSCode: https://code.visualstudio.com/
