@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'SIBYLS Beamline Documentation'
-copyright = '2023, Scott Classen'
+copyright = '2023, SIBYLS'
 author = 'Scott Classen'
 
 # The full version, including alpha/beta/rc tags

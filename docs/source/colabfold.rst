@@ -1,4 +1,3 @@
-======================
 Running ColabFold
 ======================
 
@@ -7,7 +6,7 @@ Some instructions for running `ColabFold`_ on epyc. I presented some of these in
 These are basic instructions for connecting to epyc and running a ColabFold job from the command line. It is also possible to use Microsoft's `VSCode`_ to connect if you are wanting a better experience.
 
 Basic command line instructions
-===============================
+-------------------------------
 
 .. Note::
    These instructions assume you have a remote shell open on epyc, which is outfitted with 2 NVIDIA A100-80 GPUs.
@@ -159,9 +158,9 @@ This would make the second GPU the target for jobs.
    ``1`` = second GPU
 
 Using Microsoft Visual Studio Code
-##################################
+----------------------------------
 
-The benefit of using VSCode is that you have a nice environment for editing files (rather than using `vim` in a terminal).
+The benefit of using `VSCode`_ is that you have a nice environment for editing files (rather than using `vim` in a terminal).
 
 I'll write these instructions up later.
 
