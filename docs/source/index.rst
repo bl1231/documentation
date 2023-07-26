@@ -10,26 +10,29 @@ Instructions
 ------------
 
 :doc:`colabfold`
-   How to run ColabFold on `epyc`
+   How to run ColabFold on ``epyc``, our GPU-enabled Linux machine equipped with dual `NVIDIA A100-80`_ GPUs.
 
 :doc:`nomachine`
    How to configure `NoMachine NX`_ client and connect to the beamline computers
 
 .. _NoMachine NX: https://www.nomachine.com/
-
-Indices and tables
-------------------
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. _NVIDIA A100-80: https://www.nvidia.com/en-us/data-center/a100/
 
 .. Hidden TOCs
 
 .. toctree::
    :maxdepth: 2
-   :caption: Beamline docs
+   :caption: SSH Stuff
    :hidden:
 
-   colabfold
+   ssh/config
+   ssh/keys
+
+.. toctree::
+   :maxdepth: 2
+   :caption: General
+   :hidden:
+
+   colabfold/basic_cli
+   colabfold/vscode
    nomachine
