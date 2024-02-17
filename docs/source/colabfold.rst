@@ -105,6 +105,9 @@ This will read your fasta sequence, calculate an MSA using **MMseqs2**, perform 
 
 If you want to use **amber** to relax the model provided by AF2 and use the A100 GPUs to make relaxation even faster you would provide the ``--amber`` and ``--use-gpu-relax`` command line options:
 
+.. warning::
+   With the latest ``colabfold_batch`` the ``--amber`` and ``--use-gpu-relax`` command line options are not working.
+
 .. code-block:: bash
 
    colabfold_batch --amber --use-gpu-relax --model-type auto my_prot.fasta output_dir
